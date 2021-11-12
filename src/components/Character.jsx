@@ -3,7 +3,7 @@ import GoBackButton from "./GoBackButton.jsx";
 import CharactersContext from "../contexts/CharactersContext.js";
 
 const Character = ({ match }) => {
-  const [characters] = useContext(CharactersContext);
+  const { characters } = useContext(CharactersContext);
 
   if (characters.length === 0) {
     return <div>No content yet</div>;

@@ -13,7 +13,7 @@ import pups from "./pups.js";
 
 const Routes = () => {
   const [loading, setLoading] = useState(false);
-  const [characters, setCharacters] = useContext(CharactersContext);
+  const { characters, setCharacters } = useContext(CharactersContext);
 
   useEffect(() => {
     setLoading(true);
@@ -35,23 +35,15 @@ const Routes = () => {
       <Route exact path="/" component={Home} />
       <Route path="/fry" component={Fry} />
       <Route path="/bender" component={Bender} />
-      <Route
-        exact
-        path="/pups"
-        render={(props) => <Pups {...props} pups={pups} />}
-      />
+
+      <Route exact path="/pups">
+        <Pups pups={pups} />
+      </Route>
       <Route path="/pups/:pupId" component={Pup} />
-      <Route
-        exact
-        path="/characters"
-        render={(props) => (
-          <Characters {...props} characters={characters} loading={loading} />
-        )}
-      />
-      <Route
-        path="/characters/:id"
-        render={(props) => <Character {...props} characters={characters} />}
-      />
+      <Route exact path="/characters">
+        <Characters loading={loading} />
+      </Route>
+      <Route path="/characters/:id" component={Character} />
     </Switch>
   );
 };
