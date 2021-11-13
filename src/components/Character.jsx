@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import GoBackButton from "./GoBackButton.jsx";
+import BackButton from "./BackButton.jsx";
 import CharactersContext from "../contexts/CharactersContext.js";
 
 const Character = ({ match }) => {
@@ -15,7 +15,7 @@ const Character = ({ match }) => {
     <div>
       <h2>{Name}</h2>
       <img src={PicUrl} />
-      <GoBackButton />
+      <BackButton />
     </div>
   );
 };

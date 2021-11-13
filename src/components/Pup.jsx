@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import GoBackButton from "./GoBackButton.jsx";
+import BackButton from "./BackButton.jsx";
 import pups from "./pups.js";
 
 const Pup = (props) => {
@@ -19,7 +19,7 @@ const Pup = (props) => {
       <h3>{name}</h3>
       <em>Age: {age}</em>
       <img src={`/${imageSrc}`} />
-      <GoBackButton />
+      <BackButton />
     </>
   );
 };
