@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import CharactersContext from "../context/Characters";
 import TitleContext from "../context/Title";
 
-const Characters = ({ loading }) => {
+export default function Characters({ loading }) {
   const { characters } = useContext(CharactersContext);
   const { setTitle } = useContext(TitleContext);
 
-  useEffect(() => {
-    setTitle("Characters");
-  }, []);
+  useEffect(() => setTitle("Characters"), []);
 
   return loading ? (
     <div id="loading">Loading...</div>
@@ -22,6 +20,4 @@ const Characters = ({ loading }) => {
       ))}
     </ul>
   );
-};
-
-export default Characters;
+}

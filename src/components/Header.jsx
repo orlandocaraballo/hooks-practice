@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Nav from "./Nav.jsx";
 import TitleContext from "../context/Title.js";
 
-const Header = () => {
+export default function Header() {
   const { title } = useContext(TitleContext);
 
   return (
@@ -11,6 +11,4 @@ const Header = () => {
       <h2>{title}</h2>
     </header>
   );
-};
-
-export default Header;
+}

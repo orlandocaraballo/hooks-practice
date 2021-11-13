@@ -1,14 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import TitleContext, { TitleProvider } from "../context/Title";
 
-const Fry = () => {
+export default function Fry() {
   const { setTitle } = useContext(TitleContext);
 
-  useEffect(() => {
-    setTitle("Fry");
-  }, []);
+  useEffect(() => setTitle("Fry"), []);
 
   return <img alt="Fry" src="fry.png" />;
-};
-
-export default Fry;
+}

@@ -5,7 +5,7 @@ import pups from "../pups.js";
 import TitleContext from "../../context/Title.js";
 import "./style.css";
 
-const Pup = (props) => {
+export default function Pup(props) {
   const [pup, setPup] = useState({});
   const { setTitle } = useContext(TitleContext);
 
@@ -24,6 +24,4 @@ const Pup = (props) => {
       <BackButton />
     </div>
   );
-};
-
-export default Pup;
+}

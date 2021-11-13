@@ -2,7 +2,7 @@ import React, { useState, createContext } from "react";
 
 const CharactersContext = createContext();
 
-export const CharactersProvider = ({ children }) => {
+export function CharactersProvider({ children }) {
   const [characters, setCharacters] = useState([]);
 
   return (
@@ -10,6 +10,6 @@ export const CharactersProvider = ({ children }) => {
       {children}
     </CharactersContext.Provider>
   );
-};
+}
 
 export default CharactersContext;

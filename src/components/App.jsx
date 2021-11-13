@@ -5,12 +5,12 @@ import Main from "./Main.jsx";
 import { TitleProvider } from "../context/Title.js";
 import "./App.css";
 
-const App = () => (
-  <TitleProvider>
-    <Header />
-    <Main />
-    <Footer />
-  </TitleProvider>
-);
-
-export default App;
+export default function App() {
+  return (
+    <TitleProvider>
+      <Header />
+      <Main />
+      <Footer />
+    </TitleProvider>
+  );
+}

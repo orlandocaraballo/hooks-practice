@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import TitleContext from "../context/Title";
 
-const Bender = () => {
+export default function Bender() {
   const { setTitle } = useContext(TitleContext);
 
   useEffect(() => {
@@ -9,6 +9,4 @@ const Bender = () => {
   }, []);
 
   return <img alt="Bender" src="bender.jpg" />;
-};
-
-export default Bender;
+}

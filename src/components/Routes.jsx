@@ -9,10 +9,9 @@ import Pup from "./Pup/index.jsx";
 import Characters from "./Characters.jsx";
 import Character from "./Character.jsx";
 import CharactersContext from "../context/Characters.js";
-import { TitleProvider } from "../context/Title.js";
 import pups from "./pups.js";
 
-const Routes = () => {
+export default function Routes() {
   const [loading, setLoading] = useState(false);
   const { characters, setCharacters } = useContext(CharactersContext);
 
@@ -46,6 +45,4 @@ const Routes = () => {
       <Route path="/characters/:id" component={Character} />
     </Switch>
   );
-};
-
-export default Routes;
+}

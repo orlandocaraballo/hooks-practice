@@ -1,12 +1,10 @@
 import React, { useEffect, useContext } from "react";
 import TitleContext from "../context/Title";
 
-const Home = () => {
+export default function Home() {
   const { setTitle } = useContext(TitleContext);
 
-  useEffect(() => {
-    setTitle("Home");
-  }, []);
+  useEffect(() => setTitle("Home"), []);
 
   return (
     <>
@@ -63,6 +61,4 @@ const Home = () => {
       </p>
     </>
   );
-};
-
-export default Home;
+}

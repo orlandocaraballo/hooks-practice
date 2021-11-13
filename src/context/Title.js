@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 const TitleContext = createContext();
 
-export const TitleProvider = ({ children }) => {
+export function TitleProvider({ children }) {
   const [title, setTitle] = useState("Header Component");
 
   return (
@@ -10,6 +10,6 @@ export const TitleProvider = ({ children }) => {
       {children}
     </TitleContext.Provider>
   );
-};
+}
 
 export default TitleContext;

@@ -2,12 +2,10 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import TitleContext from "../context/Title";
 
-const Pups = ({ pups }) => {
+export default function Pups({ pups }) {
   const { setTitle } = useContext(TitleContext);
 
-  useEffect(() => {
-    setTitle("Pups");
-  });
+  useEffect(() => setTitle("Pups"));
 
   return (
     <ul>
@@ -18,6 +16,4 @@ const Pups = ({ pups }) => {
       ))}
     </ul>
   );
-};
-
-export default Pups;
+}
