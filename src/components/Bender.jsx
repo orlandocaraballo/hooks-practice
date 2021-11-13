@@ -1,5 +1,14 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
+import TitleContext from "../context/Title";
 
-const Bender = () => <img alt="Bender" src="bender.jpg" />;
+const Bender = () => {
+  const { setTitle } = useContext(TitleContext);
+
+  useEffect(() => {
+    setTitle("Bender");
+  }, []);
+
+  return <img alt="Bender" src="bender.jpg" />;
+};
 
 export default Bender;

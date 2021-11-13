@@ -1,6 +1,6 @@
 import React from "react";
 import Routes from "./Routes.jsx";
-import { CharactersProvider } from "../contexts/CharactersContext.js";
+import { CharactersProvider } from "../context/Characters.js";
 
 const Main = () => (
   <CharactersProvider>

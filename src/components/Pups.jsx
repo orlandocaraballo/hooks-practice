@@ -1,8 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import TitleContext from "../context/Title";
 
-const Pups = (props) => {
-  const { pups } = props;
+const Pups = ({ pups }) => {
+  const { setTitle } = useContext(TitleContext);
+
+  useEffect(() => {
+    setTitle("Pups");
+  });
 
   return (
     <ul>

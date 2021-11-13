@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useHistory } from "react-router";
+import "./style.css";
 
 const BackButton = () => {
   const history = useHistory();

@@ -7,12 +7,3 @@ const Footer = () => (
 );
 
 export default Footer;
-
-// same as above
-// export default function () {
-//   return (
-//     <footer>
-//       <h2>Footer Component</h2>
-//     </footer>
-//   );
-// }

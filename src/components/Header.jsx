@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Nav from "./Nav.jsx";
+import TitleContext from "../context/Title.js";
 
-const Header = () => (
-  <header>
-    <Nav />
-    <h2>Header Component</h2>
-  </header>
-);
+const Header = () => {
+  const { title } = useContext(TitleContext);
+
+  return (
+    <header>
+      <Nav />
+      <h2>{title}</h2>
+    </header>
+  );
+};
 
 export default Header;

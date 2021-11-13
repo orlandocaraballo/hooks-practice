@@ -5,10 +5,11 @@ import Home from "./Home.jsx";
 import Bender from "./Bender.jsx";
 import Fry from "./Fry.jsx";
 import Pups from "./Pups.jsx";
-import Pup from "./Pup.jsx";
+import Pup from "./Pup/index.jsx";
 import Characters from "./Characters.jsx";
 import Character from "./Character.jsx";
-import CharactersContext from "../contexts/CharactersContext.js";
+import CharactersContext from "../context/Characters.js";
+import { TitleProvider } from "../context/Title.js";
 import pups from "./pups.js";
 
 const Routes = () => {
@@ -35,7 +36,6 @@ const Routes = () => {
       <Route exact path="/" component={Home} />
       <Route path="/fry" component={Fry} />
       <Route path="/bender" component={Bender} />
-
       <Route exact path="/pups">
         <Pups pups={pups} />
       </Route>
