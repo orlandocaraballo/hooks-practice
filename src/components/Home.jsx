@@ -1,8 +1,8 @@
-import React, { useEffect, useContext } from "react";
-import TitleContext from "../context/Title";
+import React, { useEffect } from "react";
+import { useTitle } from "../context/Title";
 
 export default function Home() {
-  const { setTitle } = useContext(TitleContext);
+  const { setTitle } = useTitle();
 
   useEffect(() => setTitle("Home"), []);
 

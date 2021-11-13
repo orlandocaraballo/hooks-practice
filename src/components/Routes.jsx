@@ -1,19 +1,19 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router";
 import axios from "axios";
 import Home from "./Home.jsx";
 import Bender from "./Bender.jsx";
 import Fry from "./Fry.jsx";
-import Pups from "./Pups.jsx";
-import Pup from "./Pup/index.jsx";
-import Characters from "./Characters.jsx";
+import PupList from "./PupList.jsx";
+import PupInfo from "./PupInfo/index.jsx";
+import CharacterList from "./CharacterList/index.jsx";
 import Character from "./Character.jsx";
-import CharactersContext from "../context/Characters.js";
+import { useCharacters } from "../context/Characters.js";
 import pups from "./pups.js";
 
 export default function Routes() {
   const [loading, setLoading] = useState(false);
-  const { characters, setCharacters } = useContext(CharactersContext);
+  const { setCharacters } = useCharacters();
 
   useEffect(() => {
     setLoading(true);
@@ -36,11 +36,11 @@ export default function Routes() {
       <Route path="/fry" component={Fry} />
       <Route path="/bender" component={Bender} />
       <Route exact path="/pups">
-        <Pups pups={pups} />
+        <PupList pups={pups} />
       </Route>
-      <Route path="/pups/:pupId" component={Pup} />
+      <Route path="/pups/:id" component={PupInfo} />
       <Route exact path="/characters">
-        <Characters loading={loading} />
+        <CharacterList loading={loading} />
       </Route>
       <Route path="/characters/:id" component={Character} />
     </Switch>

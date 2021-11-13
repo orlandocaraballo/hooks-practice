@@ -1,11 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import BackButton from "./BackButton/index.jsx";
-import CharactersContext from "../context/Characters.js";
-import TitleContext from "../context/Title.js";
+import { useCharacters } from "../context/Characters.js";
+import { useTitle } from "../context/Title.js";
 
 export default function Character({ match }) {
-  const { characters } = useContext(CharactersContext);
-  const { setTitle } = useContext(TitleContext);
+  const { characters } = useCharacters();
+  const { setTitle } = useTitle();
 
   useEffect(() => setTitle("Character"), []);
 

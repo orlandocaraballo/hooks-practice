@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import Nav from "./Nav.jsx";
-import TitleContext from "../context/Title.js";
+import { useTitle } from "../context/Title.js";
 
 export default function Header() {
-  const { title } = useContext(TitleContext);
+  const { title } = useTitle();
 
   return (
     <header>

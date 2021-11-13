@@ -1,11 +1,12 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import CharactersContext from "../context/Characters";
-import TitleContext from "../context/Title";
+import { useCharacters } from "../../context/Characters";
+import { useTitle } from "../../context/Title";
+import "./style.css";
 
-export default function Characters({ loading }) {
-  const { characters } = useContext(CharactersContext);
-  const { setTitle } = useContext(TitleContext);
+export default function CharacterList({ loading }) {
+  const { characters } = useCharacters();
+  const { setTitle } = useTitle();
 
   useEffect(() => setTitle("Characters"), []);
 

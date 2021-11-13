@@ -1,17 +1,17 @@
 import React from "react";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import BackButton from "../BackButton/index.jsx";
 import pups from "../pups.js";
-import TitleContext from "../../context/Title.js";
+import { useTitle } from "../../context/Title.js";
 import "./style.css";
 
-export default function Pup(props) {
+export default function PupInfo(props) {
   const [pup, setPup] = useState({});
-  const { setTitle } = useContext(TitleContext);
+  const { setTitle } = useTitle();
 
   useEffect(() => {
     setTitle("Pup");
-    setPup(pups[props.match.params.pupId - 1]);
+    setPup(pups[props.match.params.id - 1]);
   }, []);
 
   const { name, age, imageSrc } = pup;

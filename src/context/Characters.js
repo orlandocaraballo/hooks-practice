@@ -1,6 +1,10 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useContext } from "react";
 
 const CharactersContext = createContext();
+
+export function useCharacters() {
+  return useContext(CharactersContext);
+}
 
 export function CharactersProvider({ children }) {
   const [characters, setCharacters] = useState([]);

@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import TitleContext from "../context/Title";
+import { useTitle } from "../context/Title";
 
-export default function Pups({ pups }) {
-  const { setTitle } = useContext(TitleContext);
+export default function PupList({ pups }) {
+  const { setTitle } = useTitle();
 
   useEffect(() => setTitle("Pups"));
 
