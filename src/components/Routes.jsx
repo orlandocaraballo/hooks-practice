@@ -4,12 +4,12 @@ import axios from "axios";
 import Home from "./Home.jsx";
 import Bender from "./Bender.jsx";
 import Fry from "./Fry.jsx";
-import PupList from "./PupList.jsx";
-import PupInfo from "./PupInfo/index.jsx";
+import DogList from "./DogList.jsx";
+import DogInfo from "./DogInfo/index.jsx";
 import CharacterList from "./CharacterList/index.jsx";
 import Character from "./Character.jsx";
 import { useCharacters } from "../context/Characters.js";
-import pups from "./pups.js";
+import dogs from "./dogs.js";
 
 export default function Routes() {
   const [loading, setLoading] = useState(false);
@@ -18,14 +18,14 @@ export default function Routes() {
   useEffect(() => {
     setLoading(true);
 
-    const loadCharacters = async () => {
+    async function loadCharacters() {
       const { data } = await axios.get(
         "http://futuramaapi.herokuapp.com/api/v2/characters"
       );
 
       setCharacters(data);
       setLoading(false);
-    };
+    }
 
     loadCharacters();
   }, []);
@@ -35,10 +35,10 @@ export default function Routes() {
       <Route exact path="/" component={Home} />
       <Route path="/fry" component={Fry} />
       <Route path="/bender" component={Bender} />
-      <Route exact path="/pups">
-        <PupList pups={pups} />
+      <Route exact path="/dogs">
+        <DogList pups={dogs} />
       </Route>
-      <Route path="/pups/:id" component={PupInfo} />
+      <Route path="/dogs/:id" component={DogInfo} />
       <Route exact path="/characters">
         <CharacterList loading={loading} />
       </Route>

@@ -7,7 +7,7 @@ export default function Nav() {
       <Link to="/">Home</Link>
       <Link to="/fry">Fry</Link>
       <Link to="/bender">Bender</Link>
-      <Link to="/pups">Pups</Link>
+      <Link to="/dogs">Dogs</Link>
       <Link to="/characters">Characters</Link>
     </nav>
   );
