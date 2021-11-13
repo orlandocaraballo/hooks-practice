@@ -7,7 +7,7 @@ import Fry from "./Fry.jsx";
 import DogList from "./DogList.jsx";
 import DogInfo from "./DogInfo/index.jsx";
 import CharacterList from "./CharacterList/index.jsx";
-import Character from "./Character.jsx";
+import CharacterInfo from "./CharacterInfo.jsx";
 import { useCharacters } from "../context/Characters.js";
 import dogs from "./dogs.js";
 
@@ -42,7 +42,7 @@ export default function Routes() {
       <Route exact path="/characters">
         <CharacterList loading={loading} />
       </Route>
-      <Route path="/characters/:id" component={Character} />
+      <Route path="/characters/:id" component={CharacterInfo} />
     </Switch>
   );
 }

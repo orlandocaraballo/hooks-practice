@@ -3,7 +3,7 @@ import BackButton from "./BackButton/index.jsx";
 import { useCharacters } from "../context/Characters.js";
 import { useTitle } from "../context/Title.js";
 
-export default function Character({ match }) {
+export default function CharacterInfo({ match }) {
   const { characters } = useCharacters();
   const { setTitle } = useTitle();
 
